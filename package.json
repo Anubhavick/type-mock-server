@@ -1,29 +1,60 @@
 {
   "name": "type-mock-server",
-  "version": "0.1.0",
-  "description": "Instant type-safe mock APIs from your TypeScript types or schemas.",
+  "version": "1.0.0",
+  "description": "🚀 Instant type-safe mock APIs from your TypeScript types. Zero config, maximum productivity.",
   "main": "dist/index.js",
   "bin": {
-    "mock-server": "./bin/cli.js"
+    "type-mock-server": "./bin/cli.js",
+    "tms": "./bin/cli.js"
   },
   "scripts": {
     "build": "tsc",
-    "start": "node ./bin/cli.js",
-    "dev": "ts-node src/index.ts"
+    "start": "node ./bin/cli.js start",
+    "dev": "ts-node src/index.ts",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts",
+    "prepare": "npm run build"
   },
   "keywords": [
     "mock",
     "api",
     "typescript",
-    "faker",
-    "cli"
+    "mock-server",
+    "fake-data",
+    "development",
+    "testing",
+    "cli",
+    "rest-api",
+    "openapi",
+    "swagger",
+    "type-safe",
+    "developer-tools"
   ],
-  "author": "",
+  "author": "Anubhavick",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anubhavick/type-mock-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Anubhavick/type-mock-server/issues"
+  },
+  "homepage": "https://github.com/Anubhavick/type-mock-server#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "dist/",
+    "bin/",
+    "README.md",
+    "LICENSE"
+  ],
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
+    "@types/cors": "^2.8.19",
     "chokidar": "^3.6.0",
     "commander": "^11.1.0",
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "faker": "^6.6.6",
     "ts-morph": "^22.0.0"
