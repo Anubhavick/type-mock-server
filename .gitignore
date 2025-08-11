@@ -8,3 +8,6 @@ tmp/
 .cache/
 .idea/
 .vscode/
+.venv/
+*.pyc
+__pycache__/

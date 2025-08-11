@@ -1,6 +1,6 @@
 {
   "name": "type-mock-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🚀 Instant type-safe mock APIs from your TypeScript types. Zero config, maximum productivity.",
   "main": "dist/index.js",
   "bin": {
@@ -56,7 +56,6 @@
     "commander": "^11.1.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
-    "faker": "^6.6.6",
     "ts-morph": "^22.0.0"
   },
   "devDependencies": {
