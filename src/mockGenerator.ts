@@ -1,18 +1,39 @@
-import { faker } from '@faker-js/faker';
-import { Type } from 'ts-morph';
 
-export function generateMock(type: Type): any {
-  if (type.isString()) return faker.lorem.word();
-  if (type.isNumber()) return faker.datatype.number();
+import { faker } from '@faker-js/faker';
+import { Type, Symbol as MorphSymbol } from 'ts-morph';
+
+// Optionally pass custom overrides for specific fields
+export function generateMock(type: Type, overrides: Record<string, any> = {}): any {
+  if (type.isString()) return faker.lorem.words();
+  if (type.isNumber()) return faker.datatype.number({ min: 1, max: 1000 });
   if (type.isBoolean()) return faker.datatype.boolean();
-  if (type.isArray()) return [generateMock(type.getArrayElementTypeOrThrow())];
-  if (type.isObject()) {
-    const props: any = {};
+  if (type.isEnum()) {
+    const enumValues = type.getUnionTypes().map(t => t.getLiteralValue());
+    return faker.helpers.arrayElement(enumValues);
+  }
+  if (type.isUnion()) {
+    const unionTypes = type.getUnionTypes();
+    return generateMock(faker.helpers.arrayElement(unionTypes), overrides);
+  }
+  if (type.isArray()) {
+    const arrType = type.getArrayElementTypeOrThrow();
+    return Array.from({ length: faker.datatype.number({ min: 1, max: 5 }) }, () => generateMock(arrType, overrides));
+  }
+  if (type.isObject() && type.getProperties().length) {
+    const obj: Record<string, any> = {};
     type.getProperties().forEach((prop) => {
-      const propType = prop.getTypeAtLocation(prop.getValueDeclarationOrThrow());
-      props[prop.getName()] = generateMock(propType);
+      const name = prop.getName();
+      if (overrides[name] !== undefined) {
+        obj[name] = overrides[name];
+        return;
+      }
+      const valueDecl = prop.getValueDeclaration();
+      if (valueDecl) {
+        const propType = prop.getTypeAtLocation(valueDecl);
+        obj[name] = generateMock(propType, overrides[name] || {});
+      }
     });
-    return props;
+    return obj;
   }
   return null;
 }
