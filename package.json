@@ -1,6 +1,6 @@
 {
   "name": "type-mock-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "🚀 Instant type-safe mock APIs from your TypeScript types. Zero config, maximum productivity.",
   "main": "dist/index.js",
   "bin": {
