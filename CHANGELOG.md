@@ -44,4 +44,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automatic endpoint generation from configuration
 - Built-in documentation at `/docs` and `/openapi.json`
 - File watching for development workflow
-- Example project templates for quick start
+- Example project templates for quick start.

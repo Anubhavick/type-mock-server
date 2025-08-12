@@ -8,7 +8,7 @@ const program = new Command();
 program
   .name('type-mock-server')
   .description('Type-driven mock API generator')
-  .version('1.0.1');
+  .version('1.0.2');
 
 program
   .command('start')
