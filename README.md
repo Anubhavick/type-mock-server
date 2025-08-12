@@ -4,18 +4,18 @@
 
 Stop wasting time setting up mock servers! Type Mock Server automatically generates REST APIs with realistic mock data from your TypeScript interfaces and types. Perfect for frontend development, testing, and rapid prototyping.
 
-## ✨ Features
+##  Features
 
-- **🎯 Type-Driven**: Generate APIs directly from TypeScript interfaces
-- **🎲 Smart Mock Data**: Realistic data generation based on field names and types
-- **⚡ Zero Config**: Works out of the box with sensible defaults
-- **🔄 Hot Reload**: Auto-restart on type/config changes
-- **📖 Auto Documentation**: Built-in Swagger UI and OpenAPI spec
-- **🛡️ Type-Safe**: Full TypeScript support with intelligent type parsing
-- **🎨 Customizable**: Override mock data with custom generators
-- **⚡ Fast Setup**: Get running in under 30 seconds
+- ** Type-Driven**: Generate APIs directly from TypeScript interfaces
+- ** Smart Mock Data**: Realistic data generation based on field names and types
+- ** Zero Config**: Works out of the box with sensible defaults
+- ** Hot Reload**: Auto-restart on type/config changes
+- ** Auto Documentation**: Built-in Swagger UI and OpenAPI spec
+- ** Type-Safe**: Full TypeScript support with intelligent type parsing
+- ** Customizable**: Override mock data with custom generators
+- ** Fast Setup**: Get running in under 30 seconds
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Installation
 
